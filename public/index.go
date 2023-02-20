@@ -5,9 +5,8 @@
 package public
 
 import (
-	"gomen/routes"
-
 	"github.com/gin-gonic/gin"
+	"gomen/routes"
 )
 
 func init() {
