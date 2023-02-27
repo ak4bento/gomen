@@ -5,9 +5,14 @@
 package public
 
 import (
-	"gomen/routes"
-
+	"fmt"
 	"github.com/gin-gonic/gin"
+	"gomen/app/providers/orm"
+	"gomen/routes"
+)
+
+var (
+	DB orm.Model
 )
 
 func init() {
@@ -15,5 +20,5 @@ func init() {
 
 	routes.Run(app)
 
-	app.Run()
+	app.Run(fmt.Sprintf("%s:%d", "0.0.0.0", 1712))
 }

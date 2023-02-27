@@ -11,6 +11,10 @@ type Home struct {
 	Email    string `form:"email"`
 }
 
+func (this *Home) TableName() string {
+	return "app_home"
+}
+
 func (m *Home) Request(ctx *gin.Context) {
 	ctx.ShouldBind(&m)
 	return
