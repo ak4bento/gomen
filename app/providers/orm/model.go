@@ -23,10 +23,10 @@ type Model struct {
 	customConn bool     `json:"-" form:"-" gorm:"-"`
 }
 
-func (m *Model) open() {
+func (m *Model) Open() {
 	m.conn, m.sql = db.Connect(nil)
 }
 
-func (m *Model) close() {
+func (m *Model) Close() {
 	exceptions.ConnectionRefused(m.sql.Close())
 }
